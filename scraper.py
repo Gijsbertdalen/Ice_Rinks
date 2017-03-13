@@ -6,7 +6,7 @@ import urllib
 #scrape table function
 def scrape_table(root):
     rows = root.cssselect("table#AutoNumber2 tr")  # selects all <tr blocks in <table id="AutoNumber2"
-    for row in rows:
+    for row in rows[0:-1]:
         # Set up our data record - we'll need it later
         record = {}
         # grab all <td>s in the row
