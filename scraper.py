@@ -30,7 +30,7 @@ def scrape_table(root):
             # Print out the data we've gathered
             print record, '------------'
             # Finally, save the record to the datastore - 'Artist' is our unique key
-            scraperwiki.sql.save(["Rink"], record)
+            scraperwiki.sqlite.save(["Rink"], record)
 
 
 base_url = 'http://www.eiharec.co.uk/rink_list.php'
