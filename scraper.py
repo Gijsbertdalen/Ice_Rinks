@@ -10,7 +10,7 @@ def scrape_table(root):
         record = {}
         table_cells = row.cssselect("td")
         if table_cells: 
-            record['Rink'] = table_cells[0].text_content()
+            record['rink'] = table_cells[0].text_content()
             record['Address'] = table_cells[1].text_content()
             print "len", len(table_cells[2].text_content())
             if len(table_cells[2].text_content())>0:
@@ -30,7 +30,7 @@ def scrape_table(root):
             # Print out the data we've gathered
             print record, '------------'
             # Finally, save the record to the datastore - 'Artist' is our unique key
-            scraperwiki.sqlite.save(["Rink"], record)
+            scraperwiki.sqlite.save(['rink'], record)
 
 
 base_url = 'http://www.eiharec.co.uk/rink_list.php'
